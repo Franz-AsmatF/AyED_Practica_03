@@ -11,7 +11,7 @@
 	this.parent_node = parent;
 	this.children_nodes = new Array();
 
-	this._all_entities = new Array();	// {entity, node}, TODO: verifique si hay una manera de convertirlo en una entidad de mapa-> nodo
+	this._all_entities = new Array();	
 	this._to_update = parent === null ? new Array() : parent._to_update;
 	this._leaves = new Array();
 	this._leaves.push(this);
