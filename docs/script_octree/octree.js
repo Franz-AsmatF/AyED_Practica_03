@@ -170,7 +170,7 @@ Octree.prototype.subdivide = function() {
 		|   0  |  1   | |7|      /
 		|_____ |_____ |/|/       z
 		|   2  |  3   | /
-		|_____ |_____ |/ (lol)
+		|_____ |_____ |/ 
 	*/
 
 	if(this.depth >= this.max_depth)
@@ -283,7 +283,6 @@ Octree.prototype.updateLeaves = function() {
 }
 
 Octree.prototype.update = function() {
-
 	var _this = this;
 	_this.updateChildrenEntities();
 	var entities_tmp = this._all_entities.slice();
@@ -354,9 +353,8 @@ Octree.prototype.update = function() {
 
 			if(node._all_entities.length === 1 && (node._all_entities[0])[1] !== node)
 			{
-				// if the entity was in a one of the child, put it in current node
-                //si la entidad estavo en uno de los hijos, colocarlo en el nodo actual
-				node._all_entities[0][1] = node;	// actualizará esta referencia para el nodo de los padres también
+				//si la entidad esta en uno de los hijos, colocarlo en el nodo actual
+				node._all_entities[0][1] = node;
 				node.add(node._all_entities[0][0]);
 			}
 			if(node.parent_node !== null)
