@@ -48,6 +48,21 @@ function setup() {
 //     qt.show();
 // }
 
+
+/*function draw() {
+    background(0);
+    qt.show();
+    stroke(0, 255, 0);
+    rectMode(CENTER);
+    let range = new Rectangle(mouseX, mouseY, 50, 50);
+    rect(range.x, range.y, range.w * 2, range.h * 2);    
+    let points = qt.query(range);
+    for (let p of points) {
+        strokeWeight(6);
+        point(p.x, p.y);
+    }
+}*/
+
 function draw() {
     background(0);
     qt.show();
