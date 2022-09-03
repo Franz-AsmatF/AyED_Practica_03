@@ -14,9 +14,9 @@ class Rectangle {
         this.h = h;
     }
     
-     contains(point) {
+    contains(point) {
        return (point.x >= this.x - this.w && point.x <= this.x + this.w && point.y >= this.y - this.h && point.y <= this.y + this.h );
-     }
+    }
       
     intersects(range) {
        return !(range.x - range.w > this.x + this.w || range.x + range.w < this.x - this.w || range.y - range.h > this.y + this.h || range.y + range.h < this.y - this.h);
@@ -48,11 +48,9 @@ class QuadTree {
     }
 
     insert(point) {
-
         if (!this.boundary.contains(point)){
             return false;
         }
-
         if (this.points.length < this.capacity) {
             this.points.push(point);
             return true;
@@ -66,7 +64,7 @@ class QuadTree {
                 this.northwest.insert(point) ||
                 this.southeast.insert(point) ||
                 this.southwest.insert(point)
-              );
+            );
         }
     }
 
